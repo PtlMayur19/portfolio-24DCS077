@@ -1,15 +1,42 @@
-function Skills({ skillList }) {
+function Skills() {
+
+  const skills = [
+    "React",
+    "JavaScript",
+    "Node.js",
+    "MongoDB",
+    "Express",
+    "C++",
+    "Java",
+    "Git",
+    "HTML",
+    "CSS"
+  ];
+
   return (
-    <section>
+
+    <section className="skills-section">
+
       <h2>Skills</h2>
 
-      <ul>
-        {skillList.map((skill) => (
-          <li key={skill}>{skill}</li>
+      <div className="skills-grid">
+
+        {skills.map((skill) => (
+
+          <div className="skill-card" key={skill}>
+
+            {skill}
+
+          </div>
+
         ))}
-      </ul>
+
+      </div>
+
     </section>
+
   );
+
 }
 
 export default Skills;

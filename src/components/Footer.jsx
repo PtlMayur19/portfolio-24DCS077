@@ -1,8 +1,8 @@
 function Footer({ email }) {
   return (
-    <footer>
-      <p>Contact: {email}</p>
-      <p>© 2026 Student Portfolio</p>
+    <footer className="footer">
+      <p>{email}</p>
+      <p>© 2026 Mayur Patel</p>
     </footer>
   );
 }

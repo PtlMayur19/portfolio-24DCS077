@@ -1,27 +1,29 @@
-import Header from "./components/Header";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Footer from "./components/Footer";
+import "./App.css";
+
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js",
-  ];
-
   return (
-    <div>
-      <Header name="Mayur Patel" />
+    <>
+      <Navbar />
 
-      <About />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Skills skillList={skills} />
+        <Route path="/projects" element={<Projects />} />
 
-      <Footer email="19.maayur@gmail.com" />
-    </div>
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

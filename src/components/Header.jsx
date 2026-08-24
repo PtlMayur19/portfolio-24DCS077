@@ -1,7 +1,8 @@
 function Header({ name }) {
   return (
-    <header>
-      <h1>{name}'s Portfolio</h1>
+    <header className="header">
+      <h1>{name}</h1>
+      <p>CSE STUDENT </p>
     </header>
   );
 }
