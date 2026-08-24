@@ -1,3 +1,14 @@
+:root {
+  --accent: #AE445A;
+  --accent-bg: rgba(174, 68, 90, 0.15);
+  --accent-border: #AE445A;
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #ddd;
+  --text-h: #fff;
+  --social-bg: rgba(69, 25, 82, 0.3);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -533,10 +544,223 @@
 
 }
 
-.about-card{
-
-    padding:30px;
-
+.about-card {
+  padding: 30px;
+}
 }
 
+/* PROJECTS PAGE STYLES */
+.projects-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto 80px;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-header h2 {
+  font-size: 38px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.projects-header p {
+  color: #666;
+  font-size: 18px;
+}
+
+.search-wrapper {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(69, 25, 82, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  color: #1d1d1f;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(174, 68, 90, 0.2);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: rgba(69, 25, 82, 0.55);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  transition: all 0.35s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: rgba(102, 37, 73, 0.7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(174, 68, 90, 0.4);
+}
+
+.project-card-top {
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+.project-desc {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-meta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.project-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.project-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.project-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.project-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* STATES (LOADING, ERROR, EMPTY) */
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background: rgba(69, 25, 82, 0.55);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  color: var(--text);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 18px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.retry-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(174, 68, 90, 0.4);
+}
+
+.retry-button:hover {
+  background: #c24d67;
+  transform: translateY(-2px);
+}
+
+.retry-button:active {
+  transform: translateY(0);
+}
+
+.no-results {
+  font-size: 18px;
+  color: var(--text);
 }
